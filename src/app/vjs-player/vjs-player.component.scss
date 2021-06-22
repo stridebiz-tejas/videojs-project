@@ -1,12 +1,9 @@
-
-
 .video-js .vjs-big-play-button {
     display: none;
 }
 .video-js .vjs-control-bar {
     display: flex;
 }
-
 .question-links {
     width: 24.5%;
     border-radius: 10px;
@@ -21,15 +18,12 @@
     height: 200px;
     max-height: 112px;
     overflow: auto;
-
     @media only screen and (max-width: 640px) {
         width: 85%;
     }
 }
-
 .question-link {
     background: #ffffff47;
-    // background: rgba(0,0,0,.12);
     padding: 3px 5px 3px 5px;
     border-radius: 5px;
     cursor: pointer;
@@ -44,23 +38,19 @@
         transition: all .2s ease-in-out;
     }
 }
-
 .question-text {
     text-decoration: none;
     color: white;
-
     &:hover {
         color: white;
     }
 }
-
 .video-container {
     width: 30%;
     height: 85vh;
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 2px 14px 0 rgb(0 0 0 / 38%);
-
     @media only screen and (max-width: 640px) {
         width: 100%;
     }
