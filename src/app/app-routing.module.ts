@@ -13,10 +13,10 @@ const routes: Routes = [
     path: 'home',
     component: HomeComponent
   },
-  {
-    path: 'video',
-    component: VjsPlayerComponent
-  }
+  // {
+  //   path: 'video',
+  //   component: VjsPlayerComponent
+  // }
 
 ];
 
