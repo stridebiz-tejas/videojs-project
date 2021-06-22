@@ -1,0 +1,18 @@
+.panel-bg {
+    background-image: url("../../assets/images/overlay1.png");
+    background-size: cover;
+}
+
+.image-container {
+    width: 100px;
+    height: auto;
+    border-radius: 50%;
+
+    img {
+        border-radius: 50%;
+    }
+}
+
+.user-text {
+    font-family: Arial, Helvetica, sans-serif
+}
