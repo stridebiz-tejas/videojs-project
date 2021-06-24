@@ -4,6 +4,7 @@ import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import { faGlobe } from '@fortawesome/free-solid-svg-icons'
 import { faShareSquare } from '@fortawesome/free-solid-svg-icons'
 import { faSave } from '@fortawesome/free-solid-svg-icons'
+import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 
 @Component({
   selector: 'app-home',
@@ -17,10 +18,30 @@ export class HomeComponent implements OnInit {
   faGlobe = faGlobe;
   faShareSquare = faShareSquare;
   faSave = faSave;
+  modalRef!: BsModalRef;
+  showVideo = false;
 
-  constructor() { }
+  constructor(
+    private modalService: BsModalService
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  shareContact(template: any) {
+    this.modalRef = this.modalService.show(template, { animated: true, class: 'modal-md modal-dialog-centered', });
+  }
+
+  saveContact(template: any) {
+    this.modalRef = this.modalService.show(template, { animated: true, class: 'modal-md modal-dialog-centered', });
+  }
+
+  viewVideo() {
+    this.showVideo = true;
+  }
+
+  closeVideo() {
+    this.showVideo = false;
   }
 
 }

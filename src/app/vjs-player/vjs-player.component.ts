@@ -22,7 +22,7 @@ export class VjsPlayerComponent implements OnInit {
   ) {
     this.options = {
       autoplay: true,
-      controls: false,  
+      controls: false,
       preload: "auto",
       sources: [
         {
@@ -59,6 +59,7 @@ export class VjsPlayerComponent implements OnInit {
     });
     this.player.play();
     this.player.loop(true);
+    this.player.enterFullWindow();
     // this.player.on('contextmenu', (e) => {
     //   e.preventDefault();
     // })

@@ -1,11 +1,20 @@
 <div class="row d-flex justify-content-center align-items-center py-2" style="height: 100vh">
     <div class="col-md-5 col-sm-5 col-lg-5 h-100">
-        <div class="panel-bg h-100">
+        <div class="panel-bg h-100" *ngIf="!showVideo">
             <div class="row me-0 ms-0 w-100 p-2">
                 <div class="col-md-12 col-sm-12 col-lg-12">
                     <div class="row ms-0 me-0 w-100 ps-2 pt-2">
-                        <div class="col-md-5 col-sm-5 col-lg-5 bg-white">
-                            <img src="../../assets/images/stridebiz-logo.png" style="width: 150px; height: auto" />
+                        <div class="col-md-5 col-sm-5 col-lg-5 d-flex justify-content-center align-items-center">
+                            <div class="bg-white">
+                                <img src="../../assets/images/stridebiz-logo.png" style="width: 150px; height: auto" />
+                            </div>
+                        </div>
+                        <div class="col-md-7 col-sm-7 col-lg-7 text-end">
+                            <video width="150" height="100" poster="../../assets/images/video-placeholder.jpg" (click)="viewVideo()">
+                                <source
+                                    src="https://file-examples-com.github.io/uploads/2017/04/file_example_MP4_1920_18MG.mp4"
+                                    type="video/mp4">
+                            </video>
                         </div>
                     </div>
 
@@ -29,7 +38,7 @@
                                 <fa-icon class="text-white fs-4" [icon]="faPhone"></fa-icon>
                                 <h4 class="text-white ms-3 mb-0 fw-normal fs-6">
                                     <a class="text-decoration-none text-white"
-                                        href="tel:+911234567890">+911234567890</a>
+                                        href="tel:+919503222919">+919503222919</a>
                                 </h4>
                             </div>
 
@@ -37,7 +46,7 @@
                                 <fa-icon class="text-white fs-4" [icon]="faEnvelope"></fa-icon>
                                 <h4 class="text-white ms-3 mb-0 fw-normal fs-6">
                                     <a class="text-decoration-none text-white"
-                                        href="mailto:sgkhode@gmail.com">sgkhode@gmail.com</a>
+                                        href="mailto:sandeep@stridebiz.com">sandeep@stridebiz.com</a>
                                 </h4>
                             </div>
 
@@ -53,16 +62,51 @@
                     </div>
                 </div>
             </div>
-            <div class="row me-0 ms-0 w-100 border-top border-white" style="position: relative; top: 13.5%">
-                <div class="col-md-6 col-sm-6 col-lg-6 py-2 d-flex justify-content-center align-items-center">
-                    <fa-icon class="text-white fs-4" [icon]="faShareSquare"></fa-icon>
-                    <h4 class="text-white ms-2 user-text mb-0">Share Contact</h4>
+            <div class="row me-0 ms-0 w-100 border-top border-white" style="position: relative; top: 6.5%">
+                <div class="col-md-6 col-sm-6 col-lg-6 py-2">
+                    <a class="d-flex justify-content-center align-items-center text-decoration-none" href="javascript:void(0)" (click)="shareContact(shareTemplate)">
+                        <fa-icon class="text-white fs-4" [icon]="faShareSquare"></fa-icon>
+                        <h4 class="text-white ms-2 user-text mb-0">Share Contact</h4>
+                    </a>
                 </div>
-                <div class="col-md-6 col-sm-6 col-lg-6 py-2 d-flex justify-content-center align-items-center">
-                    <fa-icon class="text-white fs-4" [icon]="faSave"></fa-icon>
-                    <h4 class="text-white ms-2 user-text mb-0">Save Contact</h4>
+                <div class="col-md-6 col-sm-6 col-lg-6 py-2">
+                    <a class="d-flex justify-content-center align-items-center text-decoration-none" href="javascript:void(0)" (click)="saveContact(saveTemplate)">
+                        <fa-icon class="text-white fs-4" [icon]="faSave"></fa-icon>
+                        <h4 class="text-white ms-2 user-text mb-0">Save Contact</h4>
+                    </a>
                 </div>
             </div>
         </div>
+
+        <ng-template [ngIf]="showVideo">
+            <app-vjs-player></app-vjs-player>
+            <button class="btn btn-link close text-white" (click)="closeVideo()">
+                <span class="close-btn" aria-hidden="true">&times;</span>
+            </button>
+        </ng-template>
     </div>
 </div>
+
+<ng-template #saveTemplate>
+    <div class="modal-header">
+        <h4 class="modal-title pull-left">Info</h4>
+        <button type="button" class="btn btn-light close pull-right" aria-label="Close" (click)="modalRef.hide()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        Work in Progress, This will save vcf to users device
+    </div>
+</ng-template>
+
+<ng-template #shareTemplate>
+    <div class="modal-header">
+        <h4 class="modal-title pull-left">Info</h4>
+        <button type="button" class="btn btn-light close pull-right" aria-label="Close" (click)="modalRef.hide()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        Work in Progress, This will help users save your card to their contacts or social media.
+    </div>
+</ng-template>
