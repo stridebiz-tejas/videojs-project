@@ -45,12 +45,38 @@
     position: relative;
     top: 6.5%;
     @media screen and (max-width: 480px) {
-        top: 22.5%
+        top: 22.5%;
+    }
+    @media screen and (max-width: 360px) {
+        top: 18.5%;
     }
 }
 
 .small-text {
     @media screen and (max-width: 480px) {
         font-size: 0.9rem !important;
+    }
+
+    @media screen and (max-width: 360px) {
+        font-size: 0.7rem !important;
+    }
+}
+
+.company-logo {
+    width: 150px;
+    height: auto;
+
+    @media screen and (max-width: 360px) {
+        width: 100px;
+    }
+}
+
+.intro-video {
+    width: 150px;
+    height: 100px;
+
+    @media screen and (max-width: 360px) {
+        width: 120px;
+        height: 80px;
     }
 }
