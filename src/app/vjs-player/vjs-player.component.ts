@@ -36,23 +36,23 @@ export class VjsPlayerComponent implements OnInit {
   ngOnInit() {
     this.questions = [
       {
-        question: "How are you ?",
-        src: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+        question: "Tell me about yourself?",
+        src: "https://wordsmayabucket.s3.ap-south-1.amazonaws.com/sandeep/Tell+me+about+yourself.mp4",
         type: "video/mp4",
       },
       {
-        question: "Where are you ?",
-        src: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
+        question: "What exactly StrideBiz does?",
+        src: "https://wordsmayabucket.s3.ap-south-1.amazonaws.com/sandeep/How+StrideBiz+Works.mp4",
         type: "video/mp4",
       },
       {
-        question: "What are you doing ?",
-        src: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+        question: "How to contact me?",
+        src: "https://wordsmayabucket.s3.ap-south-1.amazonaws.com/sandeep/How+to+contact.mp4",
         type: "video/mp4",
-      },
+      }
     ];
     this.options.sources[0].src =
-      "https://file-examples-com.github.io/uploads/2017/04/file_example_MP4_1920_18MG.mp4";
+      "https://wordsmayabucket.s3.ap-south-1.amazonaws.com/sandeep/waiting.mp4";
     this.options.sources[0].type = "video/mp4";
     this.player = videojs(this.target.nativeElement, this.options, () => {
       console.log('onPlayerReady', this);
@@ -85,7 +85,7 @@ export class VjsPlayerComponent implements OnInit {
     this.player.on("ended", () => {
       this.player.src({
         type: "video/mp4",
-        src: "https://file-examples-com.github.io/uploads/2017/04/file_example_MP4_1920_18MG.mp4",
+        src: "https://wordsmayabucket.s3.ap-south-1.amazonaws.com/sandeep/waiting.mp4",
       });
       this.player.loop(true);
       this.player.load();
