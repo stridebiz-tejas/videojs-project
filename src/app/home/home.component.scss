@@ -55,6 +55,10 @@
         top: 2.5%!important;
     }
 
+    @media only screen and (min-width: 411px), screen and (min-height: 800px) {
+        top: 22.5% !important;
+    }
+
     @media only screen and (min-width: 411px) {
         top: 12.5% !important;
     }
