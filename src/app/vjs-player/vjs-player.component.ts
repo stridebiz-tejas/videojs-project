@@ -26,11 +26,11 @@ export class VjsPlayerComponent implements OnInit {
       preload: "auto",
       sources: [
         {
-          src: "https://wordsmayabucket.s3.ap-south-1.amazonaws.com/sandeep/Tapan-intro.mp4",
+          src: "https://wordsmayabucket.s3.ap-south-1.amazonaws.com/sandeep/waiting.mp4",
           type: "video/mp4",
         },
         // {
-        //   src: "https://file-examples-com.github.io/uploads/2017/04/file_example_MP4_1920_18MG.mp4",
+        //   src: "https://wordsmayabucket.s3.ap-south-1.amazonaws.com/sandeep/Tapan-intro.mp4",
         //   type: "video/mp4",
         // },
       ]
@@ -38,42 +38,42 @@ export class VjsPlayerComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.questions = [
-      {
-        question: "Are you a morning person or night owl?",
-        src: "https://wordsmayabucket.s3.ap-south-1.amazonaws.com/sandeep/Tapan-Are+you+a+morning+person+or+a+night+owl.mp4",
-        type: "video/mp4",
-      },
-      {
-        question: "Are you Coffee person or tea guy?",
-        src: "https://wordsmayabucket.s3.ap-south-1.amazonaws.com/sandeep/Tapan-Coffe+person+or+tea+guy.mp4",
-        type: "video/mp4",
-      },
-      {
-        question: "What do you prefer, dawn or dusk?",
-        src: "https://wordsmayabucket.s3.ap-south-1.amazonaws.com/sandeep/Tapan-What+do+you+prefer%2C+dawn+or+dusk.mp4",
-        type: "video/mp4",
-      }
-    ];
     // this.questions = [
     //   {
-    //     question: "Tell me about yourself?",
-    //     src: "https://wordsmayabucket.s3.ap-south-1.amazonaws.com/sandeep/Tell+me+about+yourself.mp4",
+    //     question: "Are you a morning person or night owl?",
+    //     src: "https://wordsmayabucket.s3.ap-south-1.amazonaws.com/sandeep/Tapan-Are+you+a+morning+person+or+a+night+owl.mp4",
     //     type: "video/mp4",
     //   },
     //   {
-    //     question: "What exactly StrideBiz does?",
-    //     src: "https://wordsmayabucket.s3.ap-south-1.amazonaws.com/sandeep/How+StrideBiz+Works.mp4",
+    //     question: "Are you Coffee person or tea guy?",
+    //     src: "https://wordsmayabucket.s3.ap-south-1.amazonaws.com/sandeep/Tapan-Coffe+person+or+tea+guy.mp4",
     //     type: "video/mp4",
     //   },
     //   {
-    //     question: "How to contact me?",
-    //     src: "https://wordsmayabucket.s3.ap-south-1.amazonaws.com/sandeep/How+to+contact.mp4",
+    //     question: "What do you prefer, dawn or dusk?",
+    //     src: "https://wordsmayabucket.s3.ap-south-1.amazonaws.com/sandeep/Tapan-What+do+you+prefer%2C+dawn+or+dusk.mp4",
     //     type: "video/mp4",
     //   }
     // ];
+    this.questions = [
+      {
+        question: "Tell me about yourself?",
+        src: "https://wordsmayabucket.s3.ap-south-1.amazonaws.com/sandeep/Tell+me+about+yourself.mp4",
+        type: "video/mp4",
+      },
+      {
+        question: "What exactly StrideBiz does?",
+        src: "https://wordsmayabucket.s3.ap-south-1.amazonaws.com/sandeep/How+StrideBiz+Works.mp4",
+        type: "video/mp4",
+      },
+      {
+        question: "How to contact me?",
+        src: "https://wordsmayabucket.s3.ap-south-1.amazonaws.com/sandeep/How+to+contact.mp4",
+        type: "video/mp4",
+      }
+    ];
     this.options.sources[0].src =
-      "https://wordsmayabucket.s3.ap-south-1.amazonaws.com/sandeep/Tapan-intro.mp4";
+      "https://wordsmayabucket.s3.ap-south-1.amazonaws.com/sandeep/waiting.mp4";
     this.options.sources[0].type = "video/mp4";
     this.player = videojs(this.target.nativeElement, this.options, () => {
       console.log('onPlayerReady', this);
@@ -106,7 +106,7 @@ export class VjsPlayerComponent implements OnInit {
     this.player.on("ended", () => {
       this.player.src({
         type: "video/mp4",
-        src: "https://wordsmayabucket.s3.ap-south-1.amazonaws.com/sandeep/Tapan-intro.mp4",
+        src: "https://wordsmayabucket.s3.ap-south-1.amazonaws.com/sandeep/waiting.mp4",
       });
       this.player.loop(true);
       this.player.load();
